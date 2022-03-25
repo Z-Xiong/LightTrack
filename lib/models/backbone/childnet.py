@@ -30,7 +30,7 @@ def build_subnet(path_backbone, ops=None):
         # stage 5, 14x14in
         ['ir_r1_k5_s2_e6_c192_se0.25', 'ir_r1_k5_s1_e6_c192_se0.25',
          'ir_r1_k5_s2_e6_c192_se0.25', 'ir_r1_k5_s2_e6_c192_se0.25'],
-        # stage 6, 7x7 in
+        # stage 6, 7x7 in   # unused
         ['cn_r1_k1_s1_c320_se0.25'],
     ]
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "****************** Installing lmdb ******************"
-pip install lmdb
+pip install lmdb -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
@@ -11,68 +11,68 @@ conda install -y pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
 echo ""
 echo ""
 echo "****************** Installing pandas ******************"
-pip install pandas
+pip install pandas -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing opencv ******************"
-pip install opencv-python
+pip install opencv-python -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing cython ******************"
-pip install cython==0.29.21
+pip install cython==0.29.21 -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing skimage ******************"
-pip install scikit-image
+pip install scikit-image -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing pillow ******************"
-pip install 'pillow<7.0.0'
+pip install 'pillow<7.0.0' -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing scipy ******************"
-pip install scipy
+pip install scipy -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing shapely ******************"
-pip install shapely
+pip install shapely -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing easydict ******************"
-pip install easydict
+pip install easydict -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing jpeg4py python wrapper ******************"
-pip install jpeg4py
+pip install jpeg4py -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo '****************** Intalling mpi4py ******************'
-conda install -y mpi4py
+conda install -y mpi4py -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo '****************** Intalling ray and hyperopt ******************'
-pip uninstall --yes grpcio
-pip install --upgrade setuptools
-pip install --no-cache-dir grpcio>=1.28.1
+pip uninstall --yes grpcio -i https://mirror.baidu.com/pypi/simple
+pip install --upgrade setuptools -i https://mirror.baidu.com/pypi/simple
+pip install --no-cache-dir grpcio>=1.28.1 -i https://mirror.baidu.com/pypi/simple
 conda install -c conda-forge -y grpcio
-pip install ray==0.8.7
-pip install ray[tune]
-pip install hyperopt
+pip install ray==0.8.7 -i https://mirror.baidu.com/pypi/simple
+pip install ray[tune] -i https://mirror.baidu.com/pypi/simple
+pip install hyperopt -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
 echo "****************** Installing numba ******************"
-pip install numba
+pip install numba -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""
@@ -97,17 +97,17 @@ cd ..
 echo ""
 echo ""
 echo "****************** Installing Cream ******************"
-pip install yacs
+pip install yacs -i https://mirror.baidu.com/pypi/simple
 conda install -y tensorboard
-pip install timm==0.1.20
+pip install timm==0.1.20 -i https://mirror.baidu.com/pypi/simple
 pip install git+https://github.com/sovrasov/flops-counter.pytorch.git
 pip install git+https://github.com/Tramac/torchscope.git
 
 echo ""
 echo ""
 echo "****************** Installing tensorboardX, colorama ******************"
-pip install tensorboardX
-pip install colorama
+pip install tensorboardX -i https://mirror.baidu.com/pypi/simple
+pip install colorama -i https://mirror.baidu.com/pypi/simple
 
 echo ""
 echo ""

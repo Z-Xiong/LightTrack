@@ -33,7 +33,7 @@ def parse_args():
     return args
 
 
-DATALOADER_NUM_WORKER = 2
+DATALOADER_NUM_WORKER = 1
 
 
 class ImageDataset:
@@ -116,6 +116,15 @@ def track(siam_tracker, siam_net, video, args):
                 b_overlap = poly_iou(gt[f], location) if 'VOT' in args.dataset else 1
                 if b_overlap > 0:
                     regions.append(location)
+                    cv2.rectangle(im, (int(location[0]), int(location[1])), (int(location[0]+location[2]), int(location[1]+location[3])), (0, 0, 255))
+                    x1 = min(gt[f][0::2])
+                    x2 = max(gt[f][0::2])
+                    y1 = min(gt[f][1::2])
+                    y2 = max(gt[f][1::2])
+                    cv2.rectangle(im, (int(x1), int(y1)),
+                                  (int(x2), int(y2)), (0, 255, 0))
+                    cv2.imshow("img", im)
+                    cv2.waitKey(1000)
                 else:
                     regions.append(2)
                     start_frame = f + 5

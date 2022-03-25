@@ -18,6 +18,17 @@ class Swish(nn.Module):
     def forward(self, x):
         return swish(x, self.inplace)
 
+def hard_swish(x, inplace: bool = False):
+    return x.mul_(F.relu6(x+3)) / 6.0 if inplace else x.mul(F.relu6(x+3)) / 6.0
+
+class HardSwish(nn.Module):
+    def __init__(self, inplace: bool = False):
+        super(HardSwish, self).__init__()
+        self.inplace = inplace
+
+    def forward(self, x):
+        return hard_swish(x)
+
 
 def sigmoid(x, inplace: bool = False):
     return x.sigmoid_() if inplace else x.sigmoid()

@@ -1,0 +1,10 @@
+*.onnx
+*.bin
+*.param
+*_ncnn.py
+*_pnnx.py
+*.pt
+dataset/
+.idea
+**/__pycache__/
+=1.28.1

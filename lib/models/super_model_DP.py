@@ -117,11 +117,16 @@ class Super_model_DP_retrain(Super_model):
                                                      stride=stride)
 
     def template(self, z):
+        # print("z shape is:", z.shape)
         self.zf = self.features(z)
 
     def track(self, x):
+        # print("x shape is:", x.shape)
         # supernet backbone
         xf = self.features(x)
+
+        # print("xf shape is:", xf.shape)
+        # print("zf shape is:", self.zf.shape)
         # BN before Pointwise Corr
         zf, xf = self.neck(self.zf, xf)
         # Point-wise Correlation
@@ -144,3 +149,17 @@ class Super_model_DP_retrain(Super_model):
         reg_loss = self.add_iouloss(oup['reg'], reg_target, reg_weight)
         cls_loss = self._weighted_BCE(oup['cls'], label)
         return cls_loss, reg_loss
+
+    # def forward(self, z):   # init  or backbone
+    #     self.zf = self.features(z)
+    #     return self.zf
+
+
+    # def forward(self, zf, xf):   # neck and head
+    #     # BN before Pointwise Corr
+    #     zf, xf = self.neck(zf, xf)
+    #     # Point-wise Correlation
+    #     feat_dict = self.feature_fusor(zf, xf)
+    #     # supernet head
+    #     oup = self.head(feat_dict)
+    #     return oup['cls'], oup['reg']

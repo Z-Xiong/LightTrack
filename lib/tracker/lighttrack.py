@@ -66,7 +66,7 @@ class Lighttrack(object):
         if p.windowing == 'cosine':
             window = np.outer(np.hanning(p.score_size), np.hanning(p.score_size))  # [17,17]
         elif p.windowing == 'uniform':
-            window = np.ones(int(p.score_size), int(p.score_size))
+            window = np.ones((int(p.score_size), int(p.score_size)))
         else:
             raise ValueError("Unsupported window type")
 
@@ -81,7 +81,7 @@ class Lighttrack(object):
 
     def update(self, net, x_crops, target_pos, target_sz, window, scale_z, p, debug=False):
 
-        cls_score, bbox_pred = net.track(x_crops)
+        cls_score, bbox_pred = net.track(x_crops)   # Super_model_DP_retrain.track
         cls_score = F.sigmoid(cls_score).squeeze().cpu().data.numpy()
 
         # bbox to real predict
