@@ -122,3 +122,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    # --arch LightTrackM_Subnet --resume /media/pxierra/4ddb33c4-42d9-4544-b7b4-796994f061ce/xiongzhuang/2-GitHub/LightTrack/snapshot/LightTrackM/LightTrackM.pth --video /media/pxierra/4ddb33c4-42d9-4544-b7b4-796994f061ce/data/baby_video/video/01.mp4 --stride 16 --path_name back_04502514044521042540+cls_211000022+reg_100000111_ops_32
